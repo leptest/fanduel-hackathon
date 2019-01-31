@@ -16,7 +16,6 @@ const playerNames = players.players.map(player => {
   };
 });
 
-console.log("Player names", playerNames);
 
 export default class App extends React.Component {
   constructor(props) {
