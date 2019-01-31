@@ -30,7 +30,9 @@ export default class App extends React.Component {
   handleScore = answer => {
     const answers = this.state.scores;
     answers.push(answer);
-    this.setState({ scores: answers });
+    if (answers.length < 10) {
+      this.setState({ scores: answers });
+    }
   };
 
   render() {
@@ -41,6 +43,7 @@ export default class App extends React.Component {
           handleScore={this.handleScore}
         />
         <ScoreContainer scores={this.state.scores} />
+        <Button onPress={() => this.setState({ scores: [] })} title="Reset" />
       </View>
     );
   }
