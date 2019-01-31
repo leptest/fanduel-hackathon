@@ -6,7 +6,8 @@ class CardsWrapper extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
-			choices: []
+			player1: '',
+			player2: ''
 		}
 		this.pickTwoRandom = this.pickTwoRandom.bind(this);
 
@@ -18,11 +19,21 @@ componentDidMount(){
 
 	pickTwoRandom() {
 		const allPayers = this.props.players;
-		console.log(player1);
-		const player1 = allPayers[Math.floor(Math.random()*allPayers.length)]
-		const player2 = allPayers[Math.floor(Math.random()*allPayers.length)]
 
-		console.log(player1);
+		const index1 = Math.floor(Math.random()*allPayers.length);
+		const index2 = Math.floor(Math.random()*allPayers.length);
+
+		if(index1 === index2){
+			pickTwoRandom();
+		}
+
+		const player1 = allPayers[index1]
+		const player2 = allPayers[index2]
+
+
+
+
+
 
 	}
 	// onChoice() {
