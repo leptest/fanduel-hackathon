@@ -20,7 +20,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: players.players.map(player => player),
+      players: players.players,
       names: playerNames,
       currentChoice: "t",
       scores: []

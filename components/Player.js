@@ -9,7 +9,9 @@ class Player extends Component {
   onClick() {}
 
   render() {
-    const { name, image, fppg } = this.props.player;
+    const { name, images, fppg } = this.props.player;
+    console.log(this.props.player.images["default"])
+    //console.log(this.props.player)
 
     return (
       <TouchableOpacity onPress={this.props.onClick} style={styles.container}>
