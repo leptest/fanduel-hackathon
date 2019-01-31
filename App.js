@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, Button } from "react-native";
 import Player from "./components/Player";
 import CardsWrapper from "./components/CardsWrapper";
+import ScoreContainer from "./components/ScoreContainer";
 
 const playerDataUrl =
   "https://gist.github.com/liamjdouglas/bb40ee8721f1a9313c22c6ea0851a105";
@@ -23,29 +24,17 @@ export default class App extends React.Component {
     this.state = {
       players: players.players.map(player => player),
       names: playerNames,
-      currentChoice: "t"
+      currentChoice: "t",
+      scores: [true, true, false, false, true, true, true, false, false, true]
     };
     // this.onPress
   }
+
   render() {
     return (
       <View style={styles.container}>
-        {/* <ScrollView>
-          {this.state.names.map((name, index) => {
-            return <Button key={index} title={name} age={age} />
-          })}
-        </ScrollView> */}
         <CardsWrapper players={this.state.players} />
-
-        <ScrollView>
-          {this.state.names.map((player, index) => {
-            return <Player key={index} player={player} />;
-          })}
-        </ScrollView>
-
-        {/* <Text style={styles.header}> Welcome to the Hackathon</Text>
-        <Text style={styles.subHeader} >PlayerData url:</Text>
-        <Text style={styles.content} >{playerDataUrl}</Text> */}
+        <ScoreContainer scores={this.state.scores} />
       </View>
     );
   }
@@ -55,9 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    padding: 40,
-    paddingTop: 100
+    justifyContent: "center"
   },
   header: {
     marginBottom: 40,
