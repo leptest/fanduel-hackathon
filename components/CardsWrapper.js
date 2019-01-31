@@ -5,12 +5,26 @@ import Player from './Player';
 class CardsWrapper extends Component {
 	constructor(props) {
 		super(props);
-		// this.state = ;
+		this.state={
+			choices: []
+		}
+		this.pickTwoRandom = this.pickTwoRandom.bind(this);
+
 	}
 
-	// pickTwoRandom() {
-	// }
-	//
+componentDidMount(){
+	this.pickTwoRandom();
+}
+
+	pickTwoRandom() {
+		const allPayers = this.props.players;
+		console.log(player1);
+		const player1 = allPayers[Math.floor(Math.random()*allPayers.length)]
+		const player2 = allPayers[Math.floor(Math.random()*allPayers.length)]
+
+		console.log(player1);
+
+	}
 	// onChoice() {
 	// }
 	//
@@ -22,6 +36,7 @@ class CardsWrapper extends Component {
 
 	render() {
 		const allPlayers = this.props.allPlayers;
+
 		const test = {
 			name: "daniel chapman",
 			image: "https://d17odppiik753x.cloudfront.net/playerimages/nba/15860.png",
