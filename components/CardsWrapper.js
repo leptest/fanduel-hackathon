@@ -20,20 +20,20 @@ componentDidMount(){
 	pickTwoRandom() {
 		const allPayers = this.props.players;
 
-		const index1 = Math.floor(Math.random()*allPayers.length);
-		const index2 = Math.floor(Math.random()*allPayers.length);
+		const index1 = Math.floor(Math.random() * allPayers.length);
+		const index2 = Math.floor(Math.random() * allPayers.length);
+
+		console.log(index1);
+		console.log(index2);
 
 		if(index1 === index2){
 			pickTwoRandom();
 		}
 
-		const player1 = allPayers[index1]
-		const player2 = allPayers[index2]
-
-
-
-
-
+		this.setState({
+			player1: allPayers[index1],
+			player2: allPayers[index2]
+		}, () => {console.log(this.state)});
 
 	}
 	// onChoice() {
