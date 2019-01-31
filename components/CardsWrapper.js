@@ -50,9 +50,11 @@ class CardsWrapper extends Component {
 
   handlePlayerClick = player => {
     if (player === "player1") {
-      return this.state.player1.fppg > this.state.player2.fppg;
+      const answer = this.state.player1.fppg > this.state.player2.fppg;
+      return this.props.handleScore(answer);
     } else if (player === "player2") {
-      return this.state.player2.fppg > this.state.player1.fppg;
+      const answer = this.state.player2.fppg > this.state.player1.fppg;
+      return this.props.handleScore(answer);
     }
   };
 
@@ -63,11 +65,11 @@ class CardsWrapper extends Component {
       <View>
         <Player
           player={this.state.player1}
-          onClick={() => handlePlayerClick("player1")}
+          onClick={() => this.handlePlayerClick("player1")}
         />
         <Player
           player={this.state.player2}
-          onClick={() => handlePlayerClick("player2")}
+          onClick={() => this.handlePlayerClick("player2")}
         />
       </View>
     );

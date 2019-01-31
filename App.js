@@ -23,11 +23,11 @@ export default class App extends React.Component {
       players: players.players.map(player => player),
       names: playerNames,
       currentChoice: "t",
-      scores: [true, true, false, false, true, true, true, false, false, true]
+      scores: []
     };
   }
 
-  handlePlayerClick = answer => {
+  handleScore = answer => {
     const answers = this.state.scores;
     answers.push(answer);
     this.setState({ scores: answers });
@@ -38,7 +38,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <CardsWrapper
           players={this.state.players}
-          handlePlayerClick={this.handlePlayerClick}
+          handleScore={this.handleScore}
         />
         <ScoreContainer scores={this.state.scores} />
       </View>
