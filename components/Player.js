@@ -1,27 +1,36 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 class Player extends Component {
-	constructor(props) {
-		super(props);
-		// this.state = ;
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	onClick() {
-	}
+  onClick() {}
 
-	render() {
-		return (
-      <View>
-        <Text>name</Text>
-				{/* <Image
-					source={require('/react-native/img/favicon.png')}
-				/>
-				<Text>fppg</Text> */}
-      </View>
-		);
-	}
-
+  render() {
+    const { name, image, fppg } = this.props.player;
+    return (
+      <TouchableOpacity
+        onPress={() => console.log("Hello there")}
+        style={styles.container}
+      >
+        <Text>{name}</Text>
+        <Image source={image} />
+        <Text>{fppg}</Text>
+      </TouchableOpacity>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: 150,
+    height: 300,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start"
+  }
+});
 
 export default Player;
