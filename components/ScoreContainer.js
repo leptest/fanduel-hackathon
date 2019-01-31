@@ -19,7 +19,11 @@ const styles = StyleSheet.create({
   container: {
     width: 300,
     height: 60,
-    backgroundColor: "#ddd"
+    backgroundColor: "#ddd",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row"
   }
 });
 
