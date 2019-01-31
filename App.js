@@ -6,24 +6,15 @@ import Player from './components/Player';
 const playerDataUrl = "https://gist.github.com/liamjdouglas/bb40ee8721f1a9313c22c6ea0851a105"
 
 const players = require('./Player.json')
-const playerNames = players.players.map(player => player.last_name);
+const playerNames = players.players.map(player => {
+  return {
+    name: `${player.last_name} ${player.last_name}`,
+    image: player.images.default.url,
+    fppg: player.fppg,
+  }
+});
 
-// import HomeScreen from './screens/HomeScreen';
-// import ProfileScreen from './screens/ProfileScreen';
-//
-// const MainNavigator = createStackNavigator({
-//   Home: {screen: HomeScreen},
-//   Profile: {screen: ProfileScreen},
-// },
-// {
-//   initialRouteName: 'Home',
-// });
-//
-//
-// const App = createAppNavigator(MainNavigator);
-//
-// export default App;
-
+console.log(playerNames);
 
 export default class App extends React.Component {
   constructor(props) {
@@ -37,11 +28,11 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
+        {/* <ScrollView>
           {this.state.names.map((name, index) => {
-            return <Button key={index} title={name} />
+            return <Button key={index} title={name} age={age} />
           })}
-        </ScrollView>
+        </ScrollView> */}
         {/* <Text style={styles.header}> Welcome to the Hackathon</Text>
         <Text style={styles.subHeader} >PlayerData url:</Text>
         <Text style={styles.content} >{playerDataUrl}</Text> */}
