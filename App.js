@@ -14,7 +14,7 @@ const playerNames = players.players.map(player => {
   };
 });
 
-console.log(playerNames);
+console.log("Player names", playerNames);
 
 export default class App extends React.Component {
   constructor(props) {
@@ -35,7 +35,7 @@ export default class App extends React.Component {
           })}
         </ScrollView> */}
         <ScrollView>
-          {this.state.players.map((player, index) => {
+          {this.state.names.map((player, index) => {
             return <Player key={index} player={player} />;
           })}
         </ScrollView>

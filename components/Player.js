@@ -10,13 +10,14 @@ class Player extends Component {
 
   render() {
     const { name, image, fppg } = this.props.player;
+
     return (
       <TouchableOpacity
         onPress={() => console.log("Hello there")}
         style={styles.container}
       >
+        <Image source={{ uri: image }} style={{ width: 150, height: 210 }} />
         <Text>{name}</Text>
-        <Image source={image} />
         <Text>{fppg}</Text>
       </TouchableOpacity>
     );
