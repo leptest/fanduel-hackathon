@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 class Player extends Component {
 	constructor(props) {
@@ -7,10 +7,17 @@ class Player extends Component {
 		// this.state = ;
 	}
 
+	onClick() {
+	}
+
 	render() {
 		return (
       <View>
-        <Text>{this.props.test}</Text>
+        <Text>name</Text>
+				<Image
+					source={require('/react-native/img/favicon.png')}
+				/>
+				<Text>fppg</Text>
       </View>
 		);
 	}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
-import { createStackNavigator, createAppNavigator } from 'react-navigation';
 import Player from './components/Player';
 
 const playerDataUrl = "https://gist.github.com/liamjdouglas/bb40ee8721f1a9313c22c6ea0851a105"
@@ -21,18 +20,21 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       players: players.players.map(player => player),
-      names: playerNames
+      names: playerNames,
+      currentChoice: "t",
     };
     // this.onPress
   }
   render() {
     return (
       <View style={styles.container}>
-        {/* <ScrollView>
+        <ScrollView>
           {this.state.names.map((name, index) => {
             return <Button key={index} title={name} age={age} />
           })}
-        </ScrollView> */}
+        </ScrollView>
+
+        card wrapper
         {/* <Text style={styles.header}> Welcome to the Hackathon</Text>
         <Text style={styles.subHeader} >PlayerData url:</Text>
         <Text style={styles.content} >{playerDataUrl}</Text> */}
