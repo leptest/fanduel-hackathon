@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView, Button } from "react-native";
 import Player from "./components/Player";
+import CardsWrapper from "./components/CardsWrapper";
 
 const playerDataUrl =
   "https://gist.github.com/liamjdouglas/bb40ee8721f1a9313c22c6ea0851a105";
@@ -34,6 +35,8 @@ export default class App extends React.Component {
             return <Button key={index} title={name} age={age} />
           })}
         </ScrollView> */}
+        <CardsWrapper players={this.state.players} />
+
         <ScrollView>
           {this.state.players.map((player, index) => {
             return <Player key={index} player={player} />;

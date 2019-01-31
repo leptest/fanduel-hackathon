@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import Player from './Player';
 
 class CardsWrapper extends Component {
 	constructor(props) {
@@ -7,21 +8,30 @@ class CardsWrapper extends Component {
 		// this.state = ;
 	}
 
-	pickTwoRandom() {
-	}
-
-	onChoice() {
-	}
-
-	checkScore() {
-	}
-
-	updateScore() {
-	}
+	// pickTwoRandom() {
+	// }
+	//
+	// onChoice() {
+	// }
+	//
+	// checkScore() {
+	// }
+	//
+	// updateScore() {
+	// }
 
 	render() {
+		const allPlayers = this.props.allPlayers;
+		const test = {
+			name: "daniel chapman",
+			image: "https://d17odppiik753x.cloudfront.net/playerimages/nba/15860.png",
+			fppg: "15.124312"
+		};
 		return (
-			<Text>card wrapper</Text>
+			<View>
+          <Player player={test} />
+		      <Player player={test} />
+			</View>
 		);
 	}
 
