@@ -25,15 +25,21 @@ export default class App extends React.Component {
       currentChoice: "t",
       scores: [true, true, false, false, true, true, true, false, false, true]
     };
-    // this.onPress
   }
 
-  handlePlayerClick = player => {};
+  handlePlayerClick = answer => {
+    const answers = this.state.scores;
+    answers.push(answer);
+    this.setState({ scores: answers });
+  };
 
   render() {
     return (
       <View style={styles.container}>
-        <CardsWrapper players={this.state.players} />
+        <CardsWrapper
+          players={this.state.players}
+          handlePlayerClick={this.handlePlayerClick}
+        />
         <ScoreContainer scores={this.state.scores} />
       </View>
     );
