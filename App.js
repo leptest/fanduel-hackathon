@@ -34,10 +34,6 @@ export default class App extends React.Component {
     };
     // this.onPress
   }
-
-  onPress() {
-    console.log('pressed');
-  }
   render() {
     return (
       <View style={styles.container}>
