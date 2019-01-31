@@ -10,12 +10,15 @@ class Player extends Component {
 
   render() {
     const { name, images, fppg } = this.props.player;
-    console.log(this.props.player.images["default"])
+  //  console.log(this.props.player.images["default"])
     //console.log(this.props.player)
 
     return (
-      <TouchableOpacity onPress={this.props.onClick} style={styles.container}>
-        <Image source={{ uri: image }} style={{ width: 150, height: 210 }} />
+      <TouchableOpacity
+        onPress={() => console.log("Hello there")}
+        style={styles.container}
+      >
+        <Image source={{ uri: "https://d17odppiik753x.cloudfront.net/playerimages/nba/9680.png"}} style={{ width: 150, height: 210 }} />
         <Text>{name}</Text>
         <Text>{fppg}</Text>
       </TouchableOpacity>
