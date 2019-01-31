@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 class CardsWrapper extends Component {
 	constructor(props) {
@@ -20,7 +21,7 @@ class CardsWrapper extends Component {
 
 	render() {
 		return (
-			<div>card wrapper</div>
+			<Text>card wrapper</Text>
 		);
 	}
 

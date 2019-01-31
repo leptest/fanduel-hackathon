@@ -14,10 +14,10 @@ class Player extends Component {
 		return (
       <View>
         <Text>name</Text>
-				<Image
+				{/* <Image
 					source={require('/react-native/img/favicon.png')}
 				/>
-				<Text>fppg</Text>
+				<Text>fppg</Text> */}
       </View>
 		);
 	}

@@ -28,13 +28,17 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
+        {/* <ScrollView>
           {this.state.names.map((name, index) => {
             return <Button key={index} title={name} age={age} />
           })}
+        </ScrollView> */}
+        <ScrollView>
+          {this.state.players.map((player, index) => {
+            return <Player key={index} player={player} />
+          })}
         </ScrollView>
 
-        card wrapper
         {/* <Text style={styles.header}> Welcome to the Hackathon</Text>
         <Text style={styles.subHeader} >PlayerData url:</Text>
         <Text style={styles.content} >{playerDataUrl}</Text> */}
