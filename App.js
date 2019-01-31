@@ -16,7 +16,6 @@ const playerNames = players.players.map(player => {
   };
 });
 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -28,6 +27,8 @@ export default class App extends React.Component {
     };
     // this.onPress
   }
+
+  handlePlayerClick = player => {};
 
   render() {
     return (
