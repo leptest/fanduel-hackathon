@@ -1,25 +1,26 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View, ScrollView, Button } from "react-native";
-
-class ScoreDot extends Component {
-  render() {
-    return (
-      <View
-        style={[
-          styles.dot,
-          { backgroundColor: this.props.score ? "green" : "red" }
-        ]}
-      />
-    );
-  }
-}
+import React from 'react';
+import {
+	StyleSheet,
+	View,
+} from 'react-native';
 
 const styles = StyleSheet.create({
-  dot: {
-    height: 30,
-    width: 30,
-    borderRadius: 50
-  }
+	dot: {
+		height: 30,
+		width: 30,
+		borderRadius: 50,
+	},
 });
+
+const ScoreDot = ({ score }) => {
+	return (
+		<View
+			style={[
+				styles.dot,
+				{ backgroundColor: score ? 'green' : 'red' },
+			]}
+		/>
+	);
+};
 
 export default ScoreDot;

@@ -1,74 +1,97 @@
-import React from "react";
-import { StyleSheet, Text, View, ScrollView, Button } from "react-native";
-import Player from "./components/Player";
-import CardsWrapper from "./components/CardsWrapper";
-import ScoreContainer from "./components/ScoreContainer";
+import React from 'react';
+import {
+	StyleSheet,
+	Text,
+	View,
+	Button,
+} from 'react-native';
+import { shuffle } from 'underscore';
+import Players from './components/Players';
+import Scores from './components/Scores';
+// import { shuffle } from './components/Utils';
 
-const playerDataUrl =
-  "https://gist.github.com/liamjdouglas/bb40ee8721f1a9313c22c6ea0851a105";
-
-const players = require("./Player.json");
-const playerNames = players.players.map(player => {
-  return {
-    name: `${player.last_name} ${player.last_name}`,
-    image: player.images.default.url,
-    fppg: player.fppg
-  };
-});
-
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      players: players.players,
-      names: playerNames,
-      currentChoice: "t",
-      scores: []
-    };
-  }
-
-  handleScore = answer => {
-    const answers = this.state.scores;
-    answers.push(answer);
-    if (answers.length < 10) {
-      this.setState({ scores: answers });
-    }
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <CardsWrapper
-          players={this.state.players}
-          handleScore={this.handleScore}
-        />
-        <ScoreContainer scores={this.state.scores} />
-        <Button onPress={() => this.setState({ scores: [] })} title="Reset" />
-      </View>
-    );
-  }
-}
+const jsonData = require('./Player.json');
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  header: {
-    marginBottom: 40,
-    fontSize: 24,
-    color: "#404040"
-  },
-  subHeader: {
-    marginBottom: 10,
-    fontSize: 20,
-    color: "#404040"
-  },
-  content: {
-    marginLeft: 40,
-    marginRight: 40,
-    fontSize: 16,
-    color: "#404040"
-  }
+	container: {
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	won: {
+		fontSize: 40,
+		color: 'red',
+	},
 });
+
+const playersReduced = jsonData.players.map((player) => {
+	return {
+		name: `${player.last_name} ${player.last_name}`,
+		image: player.images.default.url,
+		fppg: player.fppg,
+	};
+});
+
+const initialShuffle = shuffle(playersReduced);
+const initialPair = initialShuffle.slice(0, 2);
+
+
+export default class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			players: playersReduced,
+			scores: [],
+			currentPair: initialPair,
+		};
+		this.handleScore = this.handleScore.bind(this);
+		this.getNewPair = this.getNewPair.bind(this);
+	}
+
+	componentDidMount() {
+		// this.getNewPair();
+	}
+
+	getNewPair() {
+		const { players } = this.state;
+		const newShuffle = shuffle(players);
+		const pair = newShuffle.slice(0, 2);
+		this.setState({ currentPair: pair });
+	}
+
+	handleScore(answer) {
+		const { scores } = this.state;
+
+		if (scores.length > 9) return;
+
+		if (answer && scores.length < 10) {
+			scores.push(answer);
+			this.setState({ scores });
+		}
+		if (scores.length > 9) {
+			this.setState({ won: true });
+		}
+		this.getNewPair();
+	}
+
+	render() {
+		const { currentPair, scores, won } = this.state;
+
+		let WonMessage;
+		if (won) {
+			WonMessage = <Text style={styles.won}>Won!</Text>;
+		}
+
+		return (
+			<View style={styles.container}>
+				{WonMessage}
+				<Players
+					players={currentPair}
+					handleScore={this.handleScore}
+				/>
+				<Scores scores={scores} />
+				<Button onPress={() => { return this.setState({ scores: [], won: false }); }} title="Reset" />
+			</View>
+		);
+	}
+}
