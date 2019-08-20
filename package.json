@@ -9,24 +9,24 @@
     "eslint-fix": "npx eslint . --fix"
   },
   "dependencies": {
-    "expo": "33.0.7",
-    "react": "16.8.6",
+    "expo": "34.0.4",
+    "react": "16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "underscore": "1.9.1"
   },
   "devDependencies": {
     "babel-preset-expo": "5.2.0",
-    "eslint": "6.0.1",
-    "eslint-config-airbnb": "17.1.1",
-    "eslint-config-standard": "13.0.1",
-    "eslint-config-standard-react": "8.0.0",
-    "eslint-plugin-compat": "3.2.0",
-    "eslint-plugin-import": "2.18.0",
+    "eslint": "6.2.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-standard": "14.0.0",
+    "eslint-config-standard-react": "9.0.0",
+    "eslint-plugin-compat": "3.3.0",
+    "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-node": "9.1.0",
     "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-react": "7.14.2",
-    "eslint-plugin-standard": "4.0.0"
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-standard": "4.0.1"
   },
   "private": true
 }
