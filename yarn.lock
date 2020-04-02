@@ -934,14 +934,17 @@
     pouchdb-collections "^1.0.1"
     tiny-queue "^0.2.1"
 
-"@leptest/eslint-config-leptest@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@leptest/eslint-config-leptest/-/eslint-config-leptest-1.0.0.tgz#f2ed5e37eab305c223546610beb7d8352c20c099"
-  integrity sha512-9eruct2x76TBB0tPIqd3q4jcakK7Hb6J+t9aXMHuov3wtfMp9ySevMDgDNA1Muk/nGltWa41hhGyQaxQ2G62Bw==
+"@leptest/eslint-config-leptest@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@leptest/eslint-config-leptest/-/eslint-config-leptest-1.0.1.tgz#51b676d6c21fce8fdf29e6893f5c555a59e6366d"
+  integrity sha512-r9a/UYJ+vCk1ezxntMr9IFPJP8bVCsyeqq/8puRvkeDoYay3rGtyv6qLWtYbbZ0Z/OWqwuA6WEyNCuCe90W/vw==
   dependencies:
+    babel-eslint "10.1.0"
+    babel-preset-expo "8.1.0"
     eslint "6.8.0"
     eslint-config-airbnb "18.1.0"
     eslint-config-standard "14.1.1"
+    eslint-config-standard-react "9.2.0"
     eslint-plugin-compat "3.5.1"
     eslint-plugin-import "2.20.2"
     eslint-plugin-jsx-a11y "6.2.3"
@@ -1706,7 +1709,7 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
-babel-preset-expo@~8.1.0:
+babel-preset-expo@8.1.0, babel-preset-expo@~8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/babel-preset-expo/-/babel-preset-expo-8.1.0.tgz#7dfdebe6dad80edd1901e0f733ca6a6cce2ad605"
   integrity sha512-ZlGIo8OlO0b7S//QrqHGIIf2BY9HId5efxgBxyic5ZbKo6NHICThjSpEz4rRyQRGka7HixBq/Jyjsn4M2D/n/g==
@@ -2559,6 +2562,18 @@ eslint-config-airbnb@18.1.0:
     eslint-config-airbnb-base "^14.1.0"
     object.assign "^4.1.0"
     object.entries "^1.1.1"
+
+eslint-config-standard-jsx@^8.0.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-8.1.0.tgz#314c62a0e6f51f75547f89aade059bec140edfc7"
+  integrity sha512-ULVC8qH8qCqbU792ZOO6DaiaZyHNS/5CZt3hKqHkEhVlhPEPN3nfBqqxJCyp59XrjIBZPu1chMYe9T2DXZ7TMw==
+
+eslint-config-standard-react@9.2.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-react/-/eslint-config-standard-react-9.2.0.tgz#b21f05c087c1b0cfeea9fa3bff3cf42bd08a68a9"
+  integrity sha512-u+KRP2uCtthZ/W4DlLWCC59GZNV/y9k9yicWWammgTs/Omh8ZUUPF3EnYm81MAcbkYQq2Wg0oxutAhi/FQ8mIw==
+  dependencies:
+    eslint-config-standard-jsx "^8.0.0"
 
 eslint-config-standard@14.1.1:
   version "14.1.1"

@@ -8,7 +8,6 @@ import {
 import { shuffle } from 'underscore';
 import Players from './components/Players';
 import Scores from './components/Scores';
-// import { shuffle } from './components/Utils';
 
 const jsonData = require('./Player.json');
 

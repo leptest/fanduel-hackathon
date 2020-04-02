@@ -15,8 +15,7 @@
     "underscore": "1.10.2"
   },
   "devDependencies": {
-    "@leptest/eslint-config-leptest": "1.0.0",
-    "babel-eslint": "10.1.0"
+    "@leptest/eslint-config-leptest": "1.0.1"
   },
   "private": true
 }
