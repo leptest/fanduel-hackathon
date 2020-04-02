@@ -12,15 +12,13 @@ const styles = StyleSheet.create({
 	},
 });
 
-const ScoreDot = ({ score }) => {
-	return (
-		<View
-			style={[
-				styles.dot,
-				{ backgroundColor: score ? 'green' : 'red' },
-			]}
-		/>
-	);
-};
+const ScoreDot = ({ score }) => (
+	<View
+		style={[
+			styles.dot,
+			{ backgroundColor: score ? 'green' : 'red' },
+		]}
+	/>
+);
 
 export default ScoreDot;

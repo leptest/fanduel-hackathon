@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
 	StyleSheet,
 	View,
@@ -16,20 +16,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-class Scores extends Component {
-	render() {
-		const { scores } = this.props;
-
-		return (
-			<View style={styles.container}>
-				{scores.map((score, index) => {
-					return (
-						<ScoreDot key={index} score={score} />
-					);
-				})}
-			</View>
-		);
-	}
-}
+const Scores = ({ scores }) => (
+	<View style={styles.container}>
+		{scores.map((score) => (
+			<ScoreDot key={score} score={score} />
+		))}
+	</View>
+);
 
 export default Scores;

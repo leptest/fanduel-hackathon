@@ -38,11 +38,11 @@ class Players extends Component {
 			<View>
 				<Player
 					player={player1}
-					onClick={() => { return this.handlePlayerClick('player1'); }}
+					onClick={() => this.handlePlayerClick('player1')}
 				/>
 				<Player
 					player={player2}
-					onClick={() => { return this.handlePlayerClick('player2'); }}
+					onClick={() => this.handlePlayerClick('player2')}
 				/>
 			</View>
 		);
