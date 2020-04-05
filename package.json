@@ -5,8 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "eslint": "eslint .",
-    "eslint-fix": "eslint . --fix"
+    "eslint": "eslint --ext .jsx,.js .",
+    "eslint-fix": "eslint --ext .jsx,.js --fix ."
   },
   "dependencies": {
     "expo": "37.0.3",
