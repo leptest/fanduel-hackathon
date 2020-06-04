@@ -8,7 +8,6 @@ import {
 import { shuffle } from 'underscore';
 import Players from './components/Players';
 import Scores from './components/Scores';
-// import { shuffle } from './components/Utils';
 
 const jsonData = require('./Player.json');
 
@@ -24,13 +23,11 @@ const styles = StyleSheet.create({
 	},
 });
 
-const playersReduced = jsonData.players.map((player) => {
-	return {
-		name: `${player.last_name} ${player.last_name}`,
-		image: player.images.default.url,
-		fppg: player.fppg,
-	};
-});
+const playersReduced = jsonData.players.map((player) => ({
+	name: `${player.last_name} ${player.last_name}`,
+	image: player.images.default.url,
+	fppg: player.fppg,
+}));
 
 const initialShuffle = shuffle(playersReduced);
 const initialPair = initialShuffle.slice(0, 2);
@@ -90,7 +87,7 @@ export default class App extends React.Component {
 					handleScore={this.handleScore}
 				/>
 				<Scores scores={scores} />
-				<Button onPress={() => { return this.setState({ scores: [], won: false }); }} title="Reset" />
+				<Button onPress={() => this.setState({ scores: [], won: false })} title="Reset" />
 			</View>
 		);
 	}
