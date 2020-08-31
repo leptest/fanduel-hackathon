@@ -12,7 +12,7 @@
     "expo": "38.0.8",
     "react": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "underscore": "1.10.2"
+    "underscore": "1.11.0"
   },
   "devDependencies": {
     "@leptest/eslint-config-leptest": "1.0.5"
