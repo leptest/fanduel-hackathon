@@ -9,7 +9,7 @@
     "eslint-fix": "eslint --ext .jsx,.js --fix ."
   },
   "dependencies": {
-    "expo": "38.0.8",
+    "expo": "39.0.3",
     "react": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "underscore": "1.10.2"
