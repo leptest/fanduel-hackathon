@@ -32,7 +32,6 @@ const playersReduced = jsonData.players.map((player) => ({
 const initialShuffle = shuffle(playersReduced);
 const initialPair = initialShuffle.slice(0, 2);
 
-
 export default class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -49,13 +48,6 @@ export default class App extends React.Component {
 		// this.getNewPair();
 	}
 
-	getNewPair() {
-		const { players } = this.state;
-		const newShuffle = shuffle(players);
-		const pair = newShuffle.slice(0, 2);
-		this.setState({ currentPair: pair });
-	}
-
 	handleScore(answer) {
 		const { scores } = this.state;
 
@@ -69,6 +61,13 @@ export default class App extends React.Component {
 			this.setState({ won: true });
 		}
 		this.getNewPair();
+	}
+
+	getNewPair() {
+		const { players } = this.state;
+		const newShuffle = shuffle(players);
+		const pair = newShuffle.slice(0, 2);
+		this.setState({ currentPair: pair });
 	}
 
 	render() {
