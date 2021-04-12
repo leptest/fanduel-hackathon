@@ -15,7 +15,7 @@
     "underscore": "1.11.0"
   },
   "devDependencies": {
-    "@leptest/eslint-config-leptest": "1.0.8"
+    "@leptest/eslint-config-leptest": "2.2.0"
   },
   "private": true
 }
